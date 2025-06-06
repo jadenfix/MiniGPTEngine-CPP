@@ -162,222 +162,189 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named lightgpt_core
+# Target rules for targets named advanced_throughput_test
 
 # Build rule for target.
-lightgpt_core: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lightgpt_core
-.PHONY : lightgpt_core
+advanced_throughput_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 advanced_throughput_test
+.PHONY : advanced_throughput_test
 
 # fast build rule for target.
-lightgpt_core/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/build
-.PHONY : lightgpt_core/fast
+advanced_throughput_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/advanced_throughput_test.dir/build.make CMakeFiles/advanced_throughput_test.dir/build
+.PHONY : advanced_throughput_test/fast
 
 #=============================================================================
-# Target rules for targets named lightgpt
+# Target rules for targets named test_optimizations
 
 # Build rule for target.
-lightgpt: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 lightgpt
-.PHONY : lightgpt
+test_optimizations: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 test_optimizations
+.PHONY : test_optimizations
 
 # fast build rule for target.
-lightgpt/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt.dir/build.make CMakeFiles/lightgpt.dir/build
-.PHONY : lightgpt/fast
+test_optimizations/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_optimizations.dir/build.make CMakeFiles/test_optimizations.dir/build
+.PHONY : test_optimizations/fast
 
-src/kv_cache.o: src/kv_cache.cpp.o
-.PHONY : src/kv_cache.o
+#=============================================================================
+# Target rules for targets named real_performance_benchmark
 
-# target to build an object file
-src/kv_cache.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/kv_cache.cpp.o
-.PHONY : src/kv_cache.cpp.o
+# Build rule for target.
+real_performance_benchmark: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 real_performance_benchmark
+.PHONY : real_performance_benchmark
 
-src/kv_cache.i: src/kv_cache.cpp.i
-.PHONY : src/kv_cache.i
+# fast build rule for target.
+real_performance_benchmark/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/real_performance_benchmark.dir/build.make CMakeFiles/real_performance_benchmark.dir/build
+.PHONY : real_performance_benchmark/fast
 
-# target to preprocess a source file
-src/kv_cache.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/kv_cache.cpp.i
-.PHONY : src/kv_cache.cpp.i
+#=============================================================================
+# Target rules for targets named simple_perf_test
 
-src/kv_cache.s: src/kv_cache.cpp.s
-.PHONY : src/kv_cache.s
+# Build rule for target.
+simple_perf_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simple_perf_test
+.PHONY : simple_perf_test
 
-# target to generate assembly for a file
-src/kv_cache.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/kv_cache.cpp.s
-.PHONY : src/kv_cache.cpp.s
+# fast build rule for target.
+simple_perf_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_perf_test.dir/build.make CMakeFiles/simple_perf_test.dir/build
+.PHONY : simple_perf_test/fast
 
-src/main.o: src/main.cpp.o
-.PHONY : src/main.o
+#=============================================================================
+# Target rules for targets named comprehensive_validation
 
-# target to build an object file
-src/main.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt.dir/build.make CMakeFiles/lightgpt.dir/src/main.cpp.o
-.PHONY : src/main.cpp.o
+# Build rule for target.
+comprehensive_validation: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 comprehensive_validation
+.PHONY : comprehensive_validation
 
-src/main.i: src/main.cpp.i
-.PHONY : src/main.i
+# fast build rule for target.
+comprehensive_validation/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/comprehensive_validation.dir/build.make CMakeFiles/comprehensive_validation.dir/build
+.PHONY : comprehensive_validation/fast
 
-# target to preprocess a source file
-src/main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt.dir/build.make CMakeFiles/lightgpt.dir/src/main.cpp.i
-.PHONY : src/main.cpp.i
-
-src/main.s: src/main.cpp.s
-.PHONY : src/main.s
-
-# target to generate assembly for a file
-src/main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt.dir/build.make CMakeFiles/lightgpt.dir/src/main.cpp.s
-.PHONY : src/main.cpp.s
-
-src/model_loader.o: src/model_loader.cpp.o
-.PHONY : src/model_loader.o
+advanced_throughput_test.o: advanced_throughput_test.cpp.o
+.PHONY : advanced_throughput_test.o
 
 # target to build an object file
-src/model_loader.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/model_loader.cpp.o
-.PHONY : src/model_loader.cpp.o
+advanced_throughput_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/advanced_throughput_test.dir/build.make CMakeFiles/advanced_throughput_test.dir/advanced_throughput_test.cpp.o
+.PHONY : advanced_throughput_test.cpp.o
 
-src/model_loader.i: src/model_loader.cpp.i
-.PHONY : src/model_loader.i
+advanced_throughput_test.i: advanced_throughput_test.cpp.i
+.PHONY : advanced_throughput_test.i
 
 # target to preprocess a source file
-src/model_loader.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/model_loader.cpp.i
-.PHONY : src/model_loader.cpp.i
+advanced_throughput_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/advanced_throughput_test.dir/build.make CMakeFiles/advanced_throughput_test.dir/advanced_throughput_test.cpp.i
+.PHONY : advanced_throughput_test.cpp.i
 
-src/model_loader.s: src/model_loader.cpp.s
-.PHONY : src/model_loader.s
+advanced_throughput_test.s: advanced_throughput_test.cpp.s
+.PHONY : advanced_throughput_test.s
 
 # target to generate assembly for a file
-src/model_loader.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/model_loader.cpp.s
-.PHONY : src/model_loader.cpp.s
+advanced_throughput_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/advanced_throughput_test.dir/build.make CMakeFiles/advanced_throughput_test.dir/advanced_throughput_test.cpp.s
+.PHONY : advanced_throughput_test.cpp.s
 
-src/tensor.o: src/tensor.cpp.o
-.PHONY : src/tensor.o
+comprehensive_validation.o: comprehensive_validation.cpp.o
+.PHONY : comprehensive_validation.o
 
 # target to build an object file
-src/tensor.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/tensor.cpp.o
-.PHONY : src/tensor.cpp.o
+comprehensive_validation.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/comprehensive_validation.dir/build.make CMakeFiles/comprehensive_validation.dir/comprehensive_validation.cpp.o
+.PHONY : comprehensive_validation.cpp.o
 
-src/tensor.i: src/tensor.cpp.i
-.PHONY : src/tensor.i
+comprehensive_validation.i: comprehensive_validation.cpp.i
+.PHONY : comprehensive_validation.i
 
 # target to preprocess a source file
-src/tensor.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/tensor.cpp.i
-.PHONY : src/tensor.cpp.i
+comprehensive_validation.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/comprehensive_validation.dir/build.make CMakeFiles/comprehensive_validation.dir/comprehensive_validation.cpp.i
+.PHONY : comprehensive_validation.cpp.i
 
-src/tensor.s: src/tensor.cpp.s
-.PHONY : src/tensor.s
+comprehensive_validation.s: comprehensive_validation.cpp.s
+.PHONY : comprehensive_validation.s
 
 # target to generate assembly for a file
-src/tensor.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/tensor.cpp.s
-.PHONY : src/tensor.cpp.s
+comprehensive_validation.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/comprehensive_validation.dir/build.make CMakeFiles/comprehensive_validation.dir/comprehensive_validation.cpp.s
+.PHONY : comprehensive_validation.cpp.s
 
-src/tensor_ops.o: src/tensor_ops.cpp.o
-.PHONY : src/tensor_ops.o
+real_performance_benchmark.o: real_performance_benchmark.cpp.o
+.PHONY : real_performance_benchmark.o
 
 # target to build an object file
-src/tensor_ops.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/tensor_ops.cpp.o
-.PHONY : src/tensor_ops.cpp.o
+real_performance_benchmark.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/real_performance_benchmark.dir/build.make CMakeFiles/real_performance_benchmark.dir/real_performance_benchmark.cpp.o
+.PHONY : real_performance_benchmark.cpp.o
 
-src/tensor_ops.i: src/tensor_ops.cpp.i
-.PHONY : src/tensor_ops.i
+real_performance_benchmark.i: real_performance_benchmark.cpp.i
+.PHONY : real_performance_benchmark.i
 
 # target to preprocess a source file
-src/tensor_ops.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/tensor_ops.cpp.i
-.PHONY : src/tensor_ops.cpp.i
+real_performance_benchmark.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/real_performance_benchmark.dir/build.make CMakeFiles/real_performance_benchmark.dir/real_performance_benchmark.cpp.i
+.PHONY : real_performance_benchmark.cpp.i
 
-src/tensor_ops.s: src/tensor_ops.cpp.s
-.PHONY : src/tensor_ops.s
+real_performance_benchmark.s: real_performance_benchmark.cpp.s
+.PHONY : real_performance_benchmark.s
 
 # target to generate assembly for a file
-src/tensor_ops.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/tensor_ops.cpp.s
-.PHONY : src/tensor_ops.cpp.s
+real_performance_benchmark.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/real_performance_benchmark.dir/build.make CMakeFiles/real_performance_benchmark.dir/real_performance_benchmark.cpp.s
+.PHONY : real_performance_benchmark.cpp.s
 
-src/tensor_ops_impl.o: src/tensor_ops_impl.cpp.o
-.PHONY : src/tensor_ops_impl.o
+simple_perf_test.o: simple_perf_test.cpp.o
+.PHONY : simple_perf_test.o
 
 # target to build an object file
-src/tensor_ops_impl.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/tensor_ops_impl.cpp.o
-.PHONY : src/tensor_ops_impl.cpp.o
+simple_perf_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_perf_test.dir/build.make CMakeFiles/simple_perf_test.dir/simple_perf_test.cpp.o
+.PHONY : simple_perf_test.cpp.o
 
-src/tensor_ops_impl.i: src/tensor_ops_impl.cpp.i
-.PHONY : src/tensor_ops_impl.i
+simple_perf_test.i: simple_perf_test.cpp.i
+.PHONY : simple_perf_test.i
 
 # target to preprocess a source file
-src/tensor_ops_impl.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/tensor_ops_impl.cpp.i
-.PHONY : src/tensor_ops_impl.cpp.i
+simple_perf_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_perf_test.dir/build.make CMakeFiles/simple_perf_test.dir/simple_perf_test.cpp.i
+.PHONY : simple_perf_test.cpp.i
 
-src/tensor_ops_impl.s: src/tensor_ops_impl.cpp.s
-.PHONY : src/tensor_ops_impl.s
+simple_perf_test.s: simple_perf_test.cpp.s
+.PHONY : simple_perf_test.s
 
 # target to generate assembly for a file
-src/tensor_ops_impl.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/tensor_ops_impl.cpp.s
-.PHONY : src/tensor_ops_impl.cpp.s
+simple_perf_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_perf_test.dir/build.make CMakeFiles/simple_perf_test.dir/simple_perf_test.cpp.s
+.PHONY : simple_perf_test.cpp.s
 
-src/tokenizer.o: src/tokenizer.cpp.o
-.PHONY : src/tokenizer.o
+test_optimizations.o: test_optimizations.cpp.o
+.PHONY : test_optimizations.o
 
 # target to build an object file
-src/tokenizer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/tokenizer.cpp.o
-.PHONY : src/tokenizer.cpp.o
+test_optimizations.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_optimizations.dir/build.make CMakeFiles/test_optimizations.dir/test_optimizations.cpp.o
+.PHONY : test_optimizations.cpp.o
 
-src/tokenizer.i: src/tokenizer.cpp.i
-.PHONY : src/tokenizer.i
-
-# target to preprocess a source file
-src/tokenizer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/tokenizer.cpp.i
-.PHONY : src/tokenizer.cpp.i
-
-src/tokenizer.s: src/tokenizer.cpp.s
-.PHONY : src/tokenizer.s
-
-# target to generate assembly for a file
-src/tokenizer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/tokenizer.cpp.s
-.PHONY : src/tokenizer.cpp.s
-
-src/transformer.o: src/transformer.cpp.o
-.PHONY : src/transformer.o
-
-# target to build an object file
-src/transformer.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/transformer.cpp.o
-.PHONY : src/transformer.cpp.o
-
-src/transformer.i: src/transformer.cpp.i
-.PHONY : src/transformer.i
+test_optimizations.i: test_optimizations.cpp.i
+.PHONY : test_optimizations.i
 
 # target to preprocess a source file
-src/transformer.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/transformer.cpp.i
-.PHONY : src/transformer.cpp.i
+test_optimizations.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_optimizations.dir/build.make CMakeFiles/test_optimizations.dir/test_optimizations.cpp.i
+.PHONY : test_optimizations.cpp.i
 
-src/transformer.s: src/transformer.cpp.s
-.PHONY : src/transformer.s
+test_optimizations.s: test_optimizations.cpp.s
+.PHONY : test_optimizations.s
 
 # target to generate assembly for a file
-src/transformer.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/lightgpt_core.dir/build.make CMakeFiles/lightgpt_core.dir/src/transformer.cpp.s
-.PHONY : src/transformer.cpp.s
+test_optimizations.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/test_optimizations.dir/build.make CMakeFiles/test_optimizations.dir/test_optimizations.cpp.s
+.PHONY : test_optimizations.cpp.s
 
 # Help Target
 help:
@@ -391,32 +358,26 @@ help:
 	@echo "... install/strip"
 	@echo "... list_install_components"
 	@echo "... rebuild_cache"
-	@echo "... lightgpt"
-	@echo "... lightgpt_core"
-	@echo "... src/kv_cache.o"
-	@echo "... src/kv_cache.i"
-	@echo "... src/kv_cache.s"
-	@echo "... src/main.o"
-	@echo "... src/main.i"
-	@echo "... src/main.s"
-	@echo "... src/model_loader.o"
-	@echo "... src/model_loader.i"
-	@echo "... src/model_loader.s"
-	@echo "... src/tensor.o"
-	@echo "... src/tensor.i"
-	@echo "... src/tensor.s"
-	@echo "... src/tensor_ops.o"
-	@echo "... src/tensor_ops.i"
-	@echo "... src/tensor_ops.s"
-	@echo "... src/tensor_ops_impl.o"
-	@echo "... src/tensor_ops_impl.i"
-	@echo "... src/tensor_ops_impl.s"
-	@echo "... src/tokenizer.o"
-	@echo "... src/tokenizer.i"
-	@echo "... src/tokenizer.s"
-	@echo "... src/transformer.o"
-	@echo "... src/transformer.i"
-	@echo "... src/transformer.s"
+	@echo "... advanced_throughput_test"
+	@echo "... comprehensive_validation"
+	@echo "... real_performance_benchmark"
+	@echo "... simple_perf_test"
+	@echo "... test_optimizations"
+	@echo "... advanced_throughput_test.o"
+	@echo "... advanced_throughput_test.i"
+	@echo "... advanced_throughput_test.s"
+	@echo "... comprehensive_validation.o"
+	@echo "... comprehensive_validation.i"
+	@echo "... comprehensive_validation.s"
+	@echo "... real_performance_benchmark.o"
+	@echo "... real_performance_benchmark.i"
+	@echo "... real_performance_benchmark.s"
+	@echo "... simple_perf_test.o"
+	@echo "... simple_perf_test.i"
+	@echo "... simple_perf_test.s"
+	@echo "... test_optimizations.o"
+	@echo "... test_optimizations.i"
+	@echo "... test_optimizations.s"
 .PHONY : help
 
 

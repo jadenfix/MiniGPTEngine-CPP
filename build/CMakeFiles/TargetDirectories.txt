@@ -1,5 +1,8 @@
-/Users/jadenfix/CascadeProjects/lightgpt/build/CMakeFiles/lightgpt_core.dir
-/Users/jadenfix/CascadeProjects/lightgpt/build/CMakeFiles/lightgpt.dir
+/Users/jadenfix/CascadeProjects/lightgpt/build/CMakeFiles/advanced_throughput_test.dir
+/Users/jadenfix/CascadeProjects/lightgpt/build/CMakeFiles/test_optimizations.dir
+/Users/jadenfix/CascadeProjects/lightgpt/build/CMakeFiles/real_performance_benchmark.dir
+/Users/jadenfix/CascadeProjects/lightgpt/build/CMakeFiles/simple_perf_test.dir
+/Users/jadenfix/CascadeProjects/lightgpt/build/CMakeFiles/comprehensive_validation.dir
 /Users/jadenfix/CascadeProjects/lightgpt/build/CMakeFiles/edit_cache.dir
 /Users/jadenfix/CascadeProjects/lightgpt/build/CMakeFiles/rebuild_cache.dir
 /Users/jadenfix/CascadeProjects/lightgpt/build/CMakeFiles/list_install_components.dir

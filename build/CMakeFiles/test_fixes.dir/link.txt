@@ -1,1 +1,0 @@
-/usr/bin/clang++ -g -O0 -Wall -Wextra -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_fixes.dir/test/test_fixes.cpp.o -o test_fixes  liblightgpt_core.a lib/libgtest.a lib/libgtest_main.a lib/libgmock.a lib/libgmock_main.a lib/libgmock.a lib/libgtest.a

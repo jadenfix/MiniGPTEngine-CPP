@@ -1,0 +1,67 @@
+@PACKAGE_INIT@
+
+include(CMakeFindDependencyMacro)
+
+# Add the targets file
+include("${CMAKE_CURRENT_LIST_DIR}/lightgptTargets.cmake")
+
+# Verify that the targets file was properly included
+if(NOT TARGET lightgpt::lightgpt)
+  include("${CMAKE_CURRENT_LIST_DIR}/lightgptTargets.cmake")
+endif()
+
+# This will create the imported target lightgpt::lightgpt
+check_required_components(lightgpt)
+
+# Add include directory
+get_target_property(LIGHTGPT_INCLUDE_DIRS lightgpt::lightgpt INTERFACE_INCLUDE_DIRECTORIES)
+set_and_check(LIGHTGPT_INCLUDE_DIRS "${LIGHTGPT_INCLUDE_DIRS}")
+
+# Add library path
+get_target_property(LIGHTGPT_LIBRARIES lightgpt::lightgpt IMPORTED_LOCATION_RELEASE)
+if(NOT LIGHTGPT_LIBRARIES)
+  get_target_property(LIGHTGPT_LIBRARIES lightgpt::lightgpt IMPORTED_LOCATION)
+endif()
+set_and_check(LIGHTGPT_LIBRARIES "${LIGHTGPT_LIBRARIES}")
+
+# Add compile definitions
+get_target_property(LIGHTGPT_COMPILE_DEFINITIONS lightgpt::lightgpt INTERFACE_COMPILE_DEFINITIONS)
+if(LIGHTGPT_COMPILE_DEFINITIONS)
+  set(LIGHTGPT_COMPILE_DEFINITIONS ${LIGHTGPT_COMPILE_DEFINITIONS} CACHE STRING "LightGPT compile definitions")
+endif()
+
+# Add compile options
+get_target_property(LIGHTGPT_COMPILE_OPTIONS lightgpt::lightgpt INTERFACE_COMPILE_OPTIONS)
+if(LIGHTGPT_COMPILE_OPTIONS)
+  set(LIGHTGPT_COMPILE_OPTIONS ${LIGHTGPT_COMPILE_OPTIONS} CACHE STRING "LightGPT compile options")
+endif()
+
+# Add link libraries
+get_target_property(LIGHTGPT_LINK_LIBRARIES lightgpt::lightgpt INTERFACE_LINK_LIBRARIES)
+if(LIGHTGPT_LINK_LIBRARIES)
+  set(LIGHTGPT_LINK_LIBRARIES ${LIGHTGPT_LINK_LIBRARIES} CACHE STRING "LightGPT link libraries")
+endif()
+
+# Add version
+set(LIGHTGPT_VERSION @lightgpt_VERSION@ CACHE STRING "LightGPT version")
+
+# Create imported target for easier usage
+if(NOT TARGET lightgpt::lightgpt)
+  add_library(lightgpt::lightgpt INTERFACE IMPORTED)
+  set_target_properties(lightgpt::lightgpt PROPERTIES
+    INTERFACE_INCLUDE_DIRECTORIES "${LIGHTGPT_INCLUDE_DIRS}"
+    INTERFACE_LINK_LIBRARIES "${LIGHTGPT_LIBRARIES}"
+  )
+  
+  if(LIGHTGPT_COMPILE_DEFINITIONS)
+    set_target_properties(lightgpt::lightgpt PROPERTIES
+      INTERFACE_COMPILE_DEFINITIONS "${LIGHTGPT_COMPILE_DEFINITIONS}"
+    )
+  endif()
+  
+  if(LIGHTGPT_COMPILE_OPTIONS)
+    set_target_properties(lightgpt::lightgpt PROPERTIES
+      INTERFACE_COMPILE_OPTIONS "${LIGHTGPT_COMPILE_OPTIONS}"
+    )
+  endif()
+endif()

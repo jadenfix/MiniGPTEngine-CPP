@@ -1,0 +1,33 @@
+build/
+
+# Large model files (download separately)
+*.gguf
+models/*.gguf
+models/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf
+
+# Compiled binaries
+*.o
+*.so
+*.dylib
+*.dll
+*.exe
+*_test
+*_benchmark
+test_optimizations
+debug_gguf_parser
+gguf_parser_test
+simple_model_test
+minimal_demo
+simple_test
+create_test_model
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+Thumbs.db 

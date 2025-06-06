@@ -1,0 +1,153 @@
+Start testing: Jun 05 16:45 PDT
+----------------------------------------------------------
+1/5 Testing: test_model_loader
+1/5 Test: test_model_loader
+Command: "/Users/jadenfix/CascadeProjects/lightgpt/build/test_model_loader"
+Directory: /Users/jadenfix/CascadeProjects/lightgpt/build
+"test_model_loader" start time: Jun 05 16:45 PDT
+Output:
+----------------------------------------------------------
+[==========] Running 3 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 3 tests from ModelLoaderTest
+[ RUN      ] ModelLoaderTest.LoadModel
+Testing model loading from: test_model.gguf
+Test model file size: 116 bytes
+Creating ModelLoader instance...
+ModelLoader: Loading model from test_model.gguf
+Model architecture: llama
+Number of tensors: 0
+[       OK ] ModelLoaderTest.LoadModel (0 ms)
+[ RUN      ] ModelLoaderTest.LoadNonexistentFile
+ModelLoader: Loading model from nonexistent_file.gguf
+[       OK ] ModelLoaderTest.LoadNonexistentFile (0 ms)
+[ RUN      ] ModelLoaderTest.LoadInvalidFile
+ModelLoader: Loading model from invalid_model.gguf
+[       OK ] ModelLoaderTest.LoadInvalidFile (0 ms)
+[----------] 3 tests from ModelLoaderTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 3 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 3 tests.
+<end of output>
+Test time =   0.17 sec
+----------------------------------------------------------
+Test Passed.
+"test_model_loader" end time: Jun 05 16:45 PDT
+"test_model_loader" time elapsed: 00:00:00
+----------------------------------------------------------
+
+2/5 Testing: test_tensor
+2/5 Test: test_tensor
+Command: "/Users/jadenfix/CascadeProjects/lightgpt/build/test_tensor"
+Directory: /Users/jadenfix/CascadeProjects/lightgpt/build
+"test_tensor" start time: Jun 05 16:45 PDT
+Output:
+----------------------------------------------------------
+Running main() from /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest/src/gtest_main.cc
+[==========] Running 6 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 6 tests from TensorTest
+[ RUN      ] TensorTest.CreationAndBasicProperties
+[       OK ] TensorTest.CreationAndBasicProperties (0 ms)
+[ RUN      ] TensorTest.ElementAccess
+[       OK ] TensorTest.ElementAccess (0 ms)
+[ RUN      ] TensorTest.ArithmeticOperations
+[       OK ] TensorTest.ArithmeticOperations (0 ms)
+[ RUN      ] TensorTest.MatrixMultiplication
+[       OK ] TensorTest.MatrixMultiplication (0 ms)
+[ RUN      ] TensorTest.ReshapeAndView
+[       OK ] TensorTest.ReshapeAndView (0 ms)
+[ RUN      ] TensorTest.Softmax
+[       OK ] TensorTest.Softmax (0 ms)
+[----------] 6 tests from TensorTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 6 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 6 tests.
+<end of output>
+Test time =   0.12 sec
+----------------------------------------------------------
+Test Passed.
+"test_tensor" end time: Jun 05 16:45 PDT
+"test_tensor" time elapsed: 00:00:00
+----------------------------------------------------------
+
+3/5 Testing: test_fixes
+3/5 Test: test_fixes
+Command: "/Users/jadenfix/CascadeProjects/lightgpt/build/test_fixes"
+Directory: /Users/jadenfix/CascadeProjects/lightgpt/build
+"test_fixes" start time: Jun 05 16:45 PDT
+Output:
+----------------------------------------------------------
+[==========] Running 2 tests from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 2 tests from TensorFixes
+[ RUN      ] TensorFixes.BasicTensorOperations
+[       OK ] TensorFixes.BasicTensorOperations (0 ms)
+[ RUN      ] TensorFixes.TensorMemoryManagement
+[       OK ] TensorFixes.TensorMemoryManagement (0 ms)
+[----------] 2 tests from TensorFixes (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 2 tests from 1 test suite ran. (0 ms total)
+[  PASSED  ] 2 tests.
+<end of output>
+Test time =   0.12 sec
+----------------------------------------------------------
+Test Passed.
+"test_fixes" end time: Jun 05 16:45 PDT
+"test_fixes" time elapsed: 00:00:00
+----------------------------------------------------------
+
+4/5 Testing: test_transformer
+4/5 Test: test_transformer
+Command: "/Users/jadenfix/CascadeProjects/lightgpt/build/test_transformer"
+Directory: /Users/jadenfix/CascadeProjects/lightgpt/build
+"test_transformer" start time: Jun 05 16:45 PDT
+Output:
+----------------------------------------------------------
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TransformerTest
+[ RUN      ] TransformerTest.BasicTest
+[       OK ] TransformerTest.BasicTest (0 ms)
+[----------] 1 test from TransformerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.13 sec
+----------------------------------------------------------
+Test Passed.
+"test_transformer" end time: Jun 05 16:45 PDT
+"test_transformer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+5/5 Testing: test_tokenizer
+5/5 Test: test_tokenizer
+Command: "/Users/jadenfix/CascadeProjects/lightgpt/build/test_tokenizer"
+Directory: /Users/jadenfix/CascadeProjects/lightgpt/build
+"test_tokenizer" start time: Jun 05 16:45 PDT
+Output:
+----------------------------------------------------------
+[==========] Running 1 test from 1 test suite.
+[----------] Global test environment set-up.
+[----------] 1 test from TokenizerTest
+[ RUN      ] TokenizerTest.BasicTest
+[       OK ] TokenizerTest.BasicTest (0 ms)
+[----------] 1 test from TokenizerTest (0 ms total)
+
+[----------] Global test environment tear-down
+[==========] 1 test from 1 test suite ran. (0 ms total)
+[  PASSED  ] 1 test.
+<end of output>
+Test time =   0.12 sec
+----------------------------------------------------------
+Test Passed.
+"test_tokenizer" end time: Jun 05 16:45 PDT
+"test_tokenizer" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Jun 05 16:45 PDT

@@ -1,0 +1,122 @@
+[
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -isystem /opt/homebrew/include -g -O0 -Wall -Wextra -std=c++20 -arch arm64 -o CMakeFiles/lightgpt_core.dir/src/model_loader.cpp.o -c /Users/jadenfix/CascadeProjects/lightgpt/src/model_loader.cpp",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/src/model_loader.cpp",
+  "output": "CMakeFiles/lightgpt_core.dir/src/model_loader.cpp.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -isystem /opt/homebrew/include -g -O0 -Wall -Wextra -std=c++20 -arch arm64 -o CMakeFiles/lightgpt_core.dir/src/tensor.cpp.o -c /Users/jadenfix/CascadeProjects/lightgpt/src/tensor.cpp",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/src/tensor.cpp",
+  "output": "CMakeFiles/lightgpt_core.dir/src/tensor.cpp.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -isystem /opt/homebrew/include -g -O0 -Wall -Wextra -std=c++20 -arch arm64 -o CMakeFiles/lightgpt_core.dir/src/tensor_ops.cpp.o -c /Users/jadenfix/CascadeProjects/lightgpt/src/tensor_ops.cpp",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/src/tensor_ops.cpp",
+  "output": "CMakeFiles/lightgpt_core.dir/src/tensor_ops.cpp.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -isystem /opt/homebrew/include -g -O0 -Wall -Wextra -std=c++20 -arch arm64 -o CMakeFiles/lightgpt_core.dir/src/tensor_ops_impl.cpp.o -c /Users/jadenfix/CascadeProjects/lightgpt/src/tensor_ops_impl.cpp",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/src/tensor_ops_impl.cpp",
+  "output": "CMakeFiles/lightgpt_core.dir/src/tensor_ops_impl.cpp.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -isystem /opt/homebrew/include -g -O0 -Wall -Wextra -std=c++20 -arch arm64 -o CMakeFiles/lightgpt_core.dir/src/transformer.cpp.o -c /Users/jadenfix/CascadeProjects/lightgpt/src/transformer.cpp",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/src/transformer.cpp",
+  "output": "CMakeFiles/lightgpt_core.dir/src/transformer.cpp.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -isystem /opt/homebrew/include -g -O0 -Wall -Wextra -std=c++20 -arch arm64 -o CMakeFiles/lightgpt_core.dir/src/tokenizer.cpp.o -c /Users/jadenfix/CascadeProjects/lightgpt/src/tokenizer.cpp",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/src/tokenizer.cpp",
+  "output": "CMakeFiles/lightgpt_core.dir/src/tokenizer.cpp.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -isystem /opt/homebrew/include -g -O0 -Wall -Wextra -std=c++20 -arch arm64 -o CMakeFiles/lightgpt_core.dir/src/kv_cache.cpp.o -c /Users/jadenfix/CascadeProjects/lightgpt/src/kv_cache.cpp",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/src/kv_cache.cpp",
+  "output": "CMakeFiles/lightgpt_core.dir/src/kv_cache.cpp.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -g -O0 -Wall -Wextra -std=c++20 -arch arm64 -o CMakeFiles/lightgpt.dir/src/main.cpp.o -c /Users/jadenfix/CascadeProjects/lightgpt/src/main.cpp",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/src/main.cpp",
+  "output": "CMakeFiles/lightgpt.dir/src/main.cpp.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock -g -O0 -Wall -Wextra -std=c++20 -arch arm64 -Wno-sign-compare -o CMakeFiles/test_model_loader.dir/test/test_model_loader.cpp.o -c /Users/jadenfix/CascadeProjects/lightgpt/test/test_model_loader.cpp",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/test/test_model_loader.cpp",
+  "output": "CMakeFiles/test_model_loader.dir/test/test_model_loader.cpp.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock -g -O0 -Wall -Wextra -std=c++20 -arch arm64 -Wno-sign-compare -o CMakeFiles/test_tensor.dir/test/test_tensor.cpp.o -c /Users/jadenfix/CascadeProjects/lightgpt/test/test_tensor.cpp",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/test/test_tensor.cpp",
+  "output": "CMakeFiles/test_tensor.dir/test/test_tensor.cpp.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock -g -O0 -Wall -Wextra -std=c++20 -arch arm64 -Wno-sign-compare -o CMakeFiles/test_fixes.dir/test/test_fixes.cpp.o -c /Users/jadenfix/CascadeProjects/lightgpt/test/test_fixes.cpp",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/test/test_fixes.cpp",
+  "output": "CMakeFiles/test_fixes.dir/test/test_fixes.cpp.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock -g -O0 -Wall -Wextra -std=c++20 -arch arm64 -Wno-sign-compare -o CMakeFiles/test_transformer.dir/test/test_transformer.cpp.o -c /Users/jadenfix/CascadeProjects/lightgpt/test/test_transformer.cpp",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/test/test_transformer.cpp",
+  "output": "CMakeFiles/test_transformer.dir/test/test_transformer.cpp.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock -g -O0 -Wall -Wextra -std=c++20 -arch arm64 -Wno-sign-compare -o CMakeFiles/test_tokenizer.dir/test/test_tokenizer.cpp.o -c /Users/jadenfix/CascadeProjects/lightgpt/test/test_tokenizer.cpp",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/test/test_tokenizer.cpp",
+  "output": "CMakeFiles/test_tokenizer.dir/test/test_tokenizer.cpp.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -g -O0 -Wall -Wextra -std=c++20 -arch arm64 -o CMakeFiles/performance_benchmark.dir/tests/performance_benchmark.cpp.o -c /Users/jadenfix/CascadeProjects/lightgpt/tests/performance_benchmark.cpp",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/tests/performance_benchmark.cpp",
+  "output": "CMakeFiles/performance_benchmark.dir/tests/performance_benchmark.cpp.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -I/Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock/include -I/Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest -g -O0 -Wall -Wextra -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gmock.dir/src/gmock-all.cc.o -c /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock/src/gmock-all.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock.dir/src/gmock-all.cc.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-build/googlemock",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest -g -O0 -Wall -Wextra -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gmock_main.dir/src/gmock_main.cc.o -c /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googlemock/src/gmock_main.cc",
+  "output": "_deps/googletest-build/googlemock/CMakeFiles/gmock_main.dir/src/gmock_main.cc.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -I/Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest/include -I/Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest -g -O0 -Wall -Wextra -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gtest.dir/src/gtest-all.cc.o -c /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest/src/gtest-all.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest.dir/src/gtest-all.cc.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-build/googletest",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest/include -isystem /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest -g -O0 -Wall -Wextra -std=c++20 -arch arm64  -DGTEST_HAS_PTHREAD=1   -o CMakeFiles/gtest_main.dir/src/gtest_main.cc.o -c /Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/build/_deps/googletest-src/googletest/src/gtest_main.cc",
+  "output": "_deps/googletest-build/googletest/CMakeFiles/gtest_main.dir/src/gtest_main.cc.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build/examples",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -g -O0 -Wall -Wextra -std=c++20 -arch arm64 -o CMakeFiles/basic_usage.dir/basic_usage.cpp.o -c /Users/jadenfix/CascadeProjects/lightgpt/examples/basic_usage.cpp",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/examples/basic_usage.cpp",
+  "output": "examples/CMakeFiles/basic_usage.dir/basic_usage.cpp.o"
+},
+{
+  "directory": "/Users/jadenfix/CascadeProjects/lightgpt/build/examples",
+  "command": "/usr/bin/clang++ -DEIGEN_DONT_VECTORIZE=0 -DEIGEN_FAST_MATH=1 -DNDEBUG -I/Users/jadenfix/CascadeProjects/lightgpt/include -g -O0 -Wall -Wextra -std=c++20 -arch arm64 -o CMakeFiles/test_model.dir/test_model.cpp.o -c /Users/jadenfix/CascadeProjects/lightgpt/examples/test_model.cpp",
+  "file": "/Users/jadenfix/CascadeProjects/lightgpt/examples/test_model.cpp",
+  "output": "examples/CMakeFiles/test_model.dir/test_model.cpp.o"
+}
+]

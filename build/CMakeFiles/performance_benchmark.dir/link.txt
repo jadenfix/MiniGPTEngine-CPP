@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g -O0 -Wall -Wextra -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/performance_benchmark.dir/tests/performance_benchmark.cpp.o -o performance_benchmark  liblightgpt_core.a

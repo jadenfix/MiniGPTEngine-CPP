@@ -1,0 +1,1 @@
+/usr/bin/clang++ -g -O0 -Wall -Wextra -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/test_model.dir/test_model.cpp.o -o ../bin/examples/test_model  ../liblightgpt_core.a

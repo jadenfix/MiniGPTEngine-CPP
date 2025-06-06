@@ -1,0 +1,13 @@
+GGUF 1 0
+# This is a test model file for LightGPT
+# Format: key=value
+# Model architecture
+transformer.num_layers=2
+transformer.num_heads=4
+transformer.hidden_size=64
+transformer.intermediate_size=256
+# Vocabulary
+vocab_size=32000
+# Tensors (dummy data for testing)
+tensor.0.weight=0.1,0.2,0.3,0.4
+tensor.1.weight=0.5,0.6,0.7,0.8

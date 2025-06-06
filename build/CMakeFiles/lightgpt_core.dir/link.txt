@@ -1,0 +1,2 @@
+/usr/bin/ar qc liblightgpt_core.a CMakeFiles/lightgpt_core.dir/src/model_loader.cpp.o CMakeFiles/lightgpt_core.dir/src/tensor.cpp.o CMakeFiles/lightgpt_core.dir/src/tensor_ops.cpp.o CMakeFiles/lightgpt_core.dir/src/tensor_ops_impl.cpp.o CMakeFiles/lightgpt_core.dir/src/transformer.cpp.o CMakeFiles/lightgpt_core.dir/src/tokenizer.cpp.o CMakeFiles/lightgpt_core.dir/src/kv_cache.cpp.o
+/usr/bin/ranlib liblightgpt_core.a

@@ -1,0 +1,35 @@
+set(PACKAGE_VERSION "0.1.0")
+
+# Check whether the requested C++ standard version is compatible
+if("${PACKAGE_FIND_VERSION}" VERSION_LESS 0.1.0)
+  set(PACKAGE_VERSION_COMPATIBLE 1)
+  if("${PACKAGE_FIND_VERSION}" VERSION_EQUAL "0.1.0")
+    set(PACKAGE_VERSION_EXACT 1)
+  endif()
+else()
+  set(PACKAGE_VERSION_COMPATIBLE 0)
+  set(PACKAGE_VERSION_EXACT 0)
+  set(PACKAGE_VERSION_UNSUITABLE 1)
+endif()
+
+# Check if the same major version
+if("${PACKAGE_FIND_VERSION_MAJOR}" EQUAL "0")
+  set(PACKAGE_VERSION_COMPATIBLE 1)
+  if("${PACKAGE_FIND_VERSION}" VERSION_EQUAL "0.1.0")
+    set(PACKAGE_VERSION_EXACT 1)
+  endif()
+endif()
+
+# Check if the same minor version
+if("${PACKAGE_FIND_VERSION_MAJOR}.${PACKAGE_FIND_VERSION_MINOR}" VERSION_EQUAL "0.1")
+  set(PACKAGE_VERSION_COMPATIBLE 1)
+  if("${PACKAGE_FIND_VERSION}" VERSION_EQUAL "0.1.0")
+    set(PACKAGE_VERSION_EXACT 1)
+  endif()
+endif()
+
+# Check if the same patch version
+if("${PACKAGE_FIND_VERSION}" VERSION_EQUAL "0.1.0")
+  set(PACKAGE_VERSION_COMPATIBLE 1)
+  set(PACKAGE_VERSION_EXACT 1)
+endif()

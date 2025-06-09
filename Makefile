@@ -6,7 +6,7 @@ CXXFLAGS = -O3 -mcpu=apple-m2 -ffast-math -std=c++17
 MODEL_PATH = models/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf
 
 # Build all components
-all: step1_tokenizer_test step2_safe step3_attention step4_final real_inference
+all: step1_tokenizer_test step2_safe step3_attention step4_final real_inference quick_test interactive_test
 
 # Step 1: Real Tokenizer
 step1: step1_tokenizer_test
@@ -48,6 +48,22 @@ inference: real_inference
 real_inference: real_inference.cpp
 	$(CXX) $(CXXFLAGS) $< -o $@
 
+# 🆕 Interactive Testing - Custom Questions
+quick: quick_test
+	@echo "🎯 Quick Test: Custom questions ready"
+	@echo "Usage: ./quick_test $(MODEL_PATH) \"Your question here\""
+
+quick_test: quick_test.cpp
+	$(CXX) $(CXXFLAGS) $< -o $@
+
+# 🆕 Interactive Testing - Continuous Chat
+interactive: interactive_test
+	@echo "💬 Interactive Test: Continuous chat ready"
+	@echo "Usage: ./interactive_test $(MODEL_PATH)"
+
+interactive_test: interactive_test.cpp
+	$(CXX) $(CXXFLAGS) $< -o $@
+
 # Test all components sequentially
 test-all: all
 	@echo "🧪 Running Complete LightGPT Test Suite"
@@ -84,10 +100,11 @@ benchmark: all
 	@echo "Model Loading: 638MB GGUF in <100ms"
 
 # Demo with real questions
-demo: step4_final real_inference
+demo: step4_final real_inference quick_test
 	@echo "🎪 LightGPT Demo - Real Questions, Real Answers"
 	@echo "=============================================="
 	@echo ""
+	@echo "📚 Built-in Knowledge Base:"
 	@echo "Question: What is the capital of France?"
 	./real_inference $(MODEL_PATH) "What is the capital of France?"
 	@echo ""
@@ -96,10 +113,15 @@ demo: step4_final real_inference
 	@echo ""
 	@echo "Question: Hello"
 	./real_inference $(MODEL_PATH) "Hello"
+	@echo ""
+	@echo "🎯 Custom Questions (NEW!):"
+	@echo "Try: ./quick_test $(MODEL_PATH) \"What is the capital of Spain?\""
+	@echo "Try: ./quick_test $(MODEL_PATH) \"Tell me a joke\""
+	@echo "Try: ./quick_test $(MODEL_PATH) \"What is machine learning?\""
 
 # Clean build artifacts
 clean:
-	rm -f step1_tokenizer_test step2_safe step3_attention step4_final real_inference
+	rm -f step1_tokenizer_test step2_safe step3_attention step4_final real_inference quick_test interactive_test
 	rm -f *.o
 	@echo "🧹 Build artifacts cleaned"
 
@@ -135,15 +157,21 @@ help:
 	@echo "  make step2      - Build and test weight analysis"
 	@echo "  make step3      - Build and test attention"
 	@echo "  make step4      - Build and test full model"
+	@echo "  make quick      - Build custom question tester"
+	@echo "  make interactive- Build interactive chat mode"
 	@echo ""
 	@echo "Testing:"
 	@echo "  make test-all   - Run complete test suite"
 	@echo "  make demo       - Interactive demo with real questions"
 	@echo "  make benchmark  - Show performance achievements"
 	@echo ""
+	@echo "🆕 Interactive Testing:"
+	@echo "  ./quick_test model.gguf \"question\" - Ask custom questions"
+	@echo "  ./interactive_test model.gguf      - Continuous chat mode"
+	@echo ""
 	@echo "Utilities:"
 	@echo "  make clean      - Clean build artifacts"
 	@echo "  make check-model- Verify model file exists"
 	@echo "  make help       - Show this help"
 
-.PHONY: all step1 step2 step3 step4 test-all benchmark demo clean dev-test check-model deps help 
+.PHONY: all step1 step2 step3 step4 test-all benchmark demo clean dev-test check-model deps help quick interactive 

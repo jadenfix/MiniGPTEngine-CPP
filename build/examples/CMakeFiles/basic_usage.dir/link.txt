@@ -1,1 +1,0 @@
-/usr/bin/clang++ -g -O0 -Wall -Wextra -arch arm64 -Wl,-search_paths_first -Wl,-headerpad_max_install_names CMakeFiles/basic_usage.dir/basic_usage.cpp.o -o ../bin/examples/basic_usage  ../liblightgpt_core.a

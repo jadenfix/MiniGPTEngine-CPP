@@ -226,6 +226,32 @@ comprehensive_validation/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/comprehensive_validation.dir/build.make CMakeFiles/comprehensive_validation.dir/build
 .PHONY : comprehensive_validation/fast
 
+#=============================================================================
+# Target rules for targets named simple_real_test
+
+# Build rule for target.
+simple_real_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 simple_real_test
+.PHONY : simple_real_test
+
+# fast build rule for target.
+simple_real_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_real_test.dir/build.make CMakeFiles/simple_real_test.dir/build
+.PHONY : simple_real_test/fast
+
+#=============================================================================
+# Target rules for targets named extreme_performance_test
+
+# Build rule for target.
+extreme_performance_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/Makefile2 extreme_performance_test
+.PHONY : extreme_performance_test
+
+# fast build rule for target.
+extreme_performance_test/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/extreme_performance_test.dir/build.make CMakeFiles/extreme_performance_test.dir/build
+.PHONY : extreme_performance_test/fast
+
 advanced_throughput_test.o: advanced_throughput_test.cpp.o
 .PHONY : advanced_throughput_test.o
 
@@ -273,6 +299,30 @@ comprehensive_validation.s: comprehensive_validation.cpp.s
 comprehensive_validation.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/comprehensive_validation.dir/build.make CMakeFiles/comprehensive_validation.dir/comprehensive_validation.cpp.s
 .PHONY : comprehensive_validation.cpp.s
+
+extreme_performance_test.o: extreme_performance_test.cpp.o
+.PHONY : extreme_performance_test.o
+
+# target to build an object file
+extreme_performance_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/extreme_performance_test.dir/build.make CMakeFiles/extreme_performance_test.dir/extreme_performance_test.cpp.o
+.PHONY : extreme_performance_test.cpp.o
+
+extreme_performance_test.i: extreme_performance_test.cpp.i
+.PHONY : extreme_performance_test.i
+
+# target to preprocess a source file
+extreme_performance_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/extreme_performance_test.dir/build.make CMakeFiles/extreme_performance_test.dir/extreme_performance_test.cpp.i
+.PHONY : extreme_performance_test.cpp.i
+
+extreme_performance_test.s: extreme_performance_test.cpp.s
+.PHONY : extreme_performance_test.s
+
+# target to generate assembly for a file
+extreme_performance_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/extreme_performance_test.dir/build.make CMakeFiles/extreme_performance_test.dir/extreme_performance_test.cpp.s
+.PHONY : extreme_performance_test.cpp.s
 
 real_performance_benchmark.o: real_performance_benchmark.cpp.o
 .PHONY : real_performance_benchmark.o
@@ -322,6 +372,30 @@ simple_perf_test.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_perf_test.dir/build.make CMakeFiles/simple_perf_test.dir/simple_perf_test.cpp.s
 .PHONY : simple_perf_test.cpp.s
 
+simple_real_test.o: simple_real_test.cpp.o
+.PHONY : simple_real_test.o
+
+# target to build an object file
+simple_real_test.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_real_test.dir/build.make CMakeFiles/simple_real_test.dir/simple_real_test.cpp.o
+.PHONY : simple_real_test.cpp.o
+
+simple_real_test.i: simple_real_test.cpp.i
+.PHONY : simple_real_test.i
+
+# target to preprocess a source file
+simple_real_test.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_real_test.dir/build.make CMakeFiles/simple_real_test.dir/simple_real_test.cpp.i
+.PHONY : simple_real_test.cpp.i
+
+simple_real_test.s: simple_real_test.cpp.s
+.PHONY : simple_real_test.s
+
+# target to generate assembly for a file
+simple_real_test.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/simple_real_test.dir/build.make CMakeFiles/simple_real_test.dir/simple_real_test.cpp.s
+.PHONY : simple_real_test.cpp.s
+
 test_optimizations.o: test_optimizations.cpp.o
 .PHONY : test_optimizations.o
 
@@ -360,8 +434,10 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... advanced_throughput_test"
 	@echo "... comprehensive_validation"
+	@echo "... extreme_performance_test"
 	@echo "... real_performance_benchmark"
 	@echo "... simple_perf_test"
+	@echo "... simple_real_test"
 	@echo "... test_optimizations"
 	@echo "... advanced_throughput_test.o"
 	@echo "... advanced_throughput_test.i"
@@ -369,12 +445,18 @@ help:
 	@echo "... comprehensive_validation.o"
 	@echo "... comprehensive_validation.i"
 	@echo "... comprehensive_validation.s"
+	@echo "... extreme_performance_test.o"
+	@echo "... extreme_performance_test.i"
+	@echo "... extreme_performance_test.s"
 	@echo "... real_performance_benchmark.o"
 	@echo "... real_performance_benchmark.i"
 	@echo "... real_performance_benchmark.s"
 	@echo "... simple_perf_test.o"
 	@echo "... simple_perf_test.i"
 	@echo "... simple_perf_test.s"
+	@echo "... simple_real_test.o"
+	@echo "... simple_real_test.i"
+	@echo "... simple_real_test.s"
 	@echo "... test_optimizations.o"
 	@echo "... test_optimizations.i"
 	@echo "... test_optimizations.s"

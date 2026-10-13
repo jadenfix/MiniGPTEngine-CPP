@@ -1,8 +1,8 @@
 # LightGPT Makefile - Apple Silicon Optimized Transformer Engine
 # Author: Built with passion for high-performance AI inference
 
-CXX = g++
-CXXFLAGS = -O3 -mcpu=apple-m2 -ffast-math -std=c++17
+CXX = c++
+CXXFLAGS ?= -O2 -Wall -Wextra -Wpedantic -std=c++17
 MODEL_PATH = models/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf
 
 # Build all components
@@ -16,7 +16,7 @@ step1: step1_tokenizer_test
 step1_tokenizer_test: step1_tokenizer_test.cpp
 	$(CXX) $(CXXFLAGS) $< -o $@
 
-# Step 2: Weight Analysis  
+# Step 2: Weight Analysis
 step2: step2_safe
 	@echo "🔍 Testing Step 2: Weight Analysis"
 	./step2_safe $(MODEL_PATH)
@@ -65,7 +65,7 @@ interactive_test: interactive_test.cpp
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 # Test all components sequentially
-test-all: all
+test-all: check-model all
 	@echo "🧪 Running Complete LightGPT Test Suite"
 	@echo "======================================"
 	@echo ""
@@ -73,7 +73,7 @@ test-all: all
 	@echo "======================"
 	./step1_tokenizer_test $(MODEL_PATH)
 	@echo ""
-	@echo "Step 2: Weight Analysis"  
+	@echo "Step 2: Weight Analysis"
 	@echo "======================="
 	./step2_safe $(MODEL_PATH)
 	@echo ""
@@ -90,14 +90,9 @@ test-all: all
 	@echo "✅ Apple Silicon optimizations working"
 	@echo "✅ Real answers generated successfully"
 
-# Performance benchmarks
-benchmark: all
-	@echo "📊 LightGPT Performance Benchmarks"
-	@echo "=================================="
-	@echo "Quantization: 25.46× compression (170% of target)"
-	@echo "SIMD Speedup: 2.58× faster (129% of target)" 
-	@echo "Inference: Sub-millisecond response times"
-	@echo "Model Loading: 638MB GGUF in <100ms"
+# Run the verified dependency-free reference kernel.
+benchmark: step3_attention
+	./step3_attention
 
 # Demo with real questions
 demo: step4_final real_inference quick_test
@@ -174,4 +169,11 @@ help:
 	@echo "  make check-model- Verify model file exists"
 	@echo "  make help       - Show this help"
 
-.PHONY: all step1 step2 step3 step4 test-all benchmark demo clean dev-test check-model deps help quick interactive 
+.PHONY: all step1 step2 step3 step4 test-all benchmark demo clean dev-test check-model deps help quick interactive
+.PHONY: test
+test: build/attention_reference
+	./build/attention_reference
+
+build/attention_reference: step3_attention.cpp
+	@mkdir -p build
+	$(CXX) $(CXXFLAGS) $< -o $@

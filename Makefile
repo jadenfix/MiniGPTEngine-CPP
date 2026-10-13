@@ -2,7 +2,7 @@
 # Author: Built with passion for high-performance AI inference
 
 CXX ?= c++
-CXXFLAGS ?= -O2 -std=c++20 -Wall -Wextra -pedantic
+CXXFLAGS ?= -O2 -std=c++17 -Wall -Wextra -pedantic
 MODEL_PATH = models/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf
 
 # Portable, model-free validation is the default. Legacy model tools are prototypes.
@@ -80,7 +80,7 @@ interactive_test: interactive_test.cpp
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 # Test all components sequentially
-test-all: model-tools
+test-all: check-model model-tools
 	@echo "🧪 Running Complete LightGPT Test Suite"
 	@echo "======================================"
 	@echo ""
@@ -108,7 +108,7 @@ test-all: model-tools
 # Performance benchmarks
 benchmark: build/attention_demo
 	@echo "Observed educational attention timing on this machine (not tokens/sec model inference):"
-	./build/attention_demo
+	time ./build/attention_demo
 
 # Demo with real questions
 demo: step4_final real_inference quick_test

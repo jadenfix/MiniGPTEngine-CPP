@@ -1,79 +1,82 @@
-#include <iostream>
-#include <vector>
+#include <algorithm>
 #include <cmath>
-#include <chrono>
-#include <random>
+#include <iostream>
+#include <stdexcept>
+#include <vector>
 
+// A dependency-free reference kernel. Q, K and V are identity projections;
+// trained projection weights and model decoding are deliberately not implied.
 class AttentionMechanism {
-private:
-    int hidden_size = 64;
-    int num_heads = 8;
-    int head_dim = hidden_size / num_heads;
-    
 public:
-    std::vector<float> self_attention(const std::vector<float>& input_embeddings, int seq_len) {
-        std::cout << "🧠 Computing self-attention..." << std::endl;
-        std::cout << "   Sequence length: " << seq_len << std::endl;
-        std::cout << "   Hidden size: " << hidden_size << std::endl;
-        
-        auto start = std::chrono::high_resolution_clock::now();
-        
-        std::vector<float> output(seq_len * hidden_size);
-        
-        for (int i = 0; i < seq_len; i++) {
-            for (int j = 0; j < hidden_size; j++) {
-                float sum = 0.0f;
-                for (int k = 0; k < seq_len; k++) {
-                    sum += input_embeddings[k * hidden_size + j] * 0.1f;
+    static constexpr int hidden_size = 64;
+    static constexpr int num_heads = 8;
+    static constexpr int head_dim = hidden_size / num_heads;
+
+    std::vector<float> self_attention(const std::vector<float>& input, int seq_len) const {
+        if (seq_len <= 0 || input.size() != static_cast<size_t>(seq_len) * hidden_size)
+            throw std::invalid_argument("input must have shape [positive sequence length, 64]");
+        for (float value : input)
+            if (!std::isfinite(value)) throw std::invalid_argument("input must be finite");
+        std::vector<float> output(input.size(), 0.0f);
+        std::vector<double> scores(seq_len);
+        for (int head = 0; head < num_heads; ++head) {
+            for (int query = 0; query < seq_len; ++query) {
+                double maximum = -INFINITY;
+                for (int key = 0; key <= query; ++key) {
+                    double dot = 0;
+                    for (int dim = 0; dim < head_dim; ++dim) {
+                        const int channel = head * head_dim + dim;
+                        dot += static_cast<double>(input[query * hidden_size + channel]) * input[key * hidden_size + channel];
+                    }
+                    scores[key] = dot / std::sqrt(static_cast<double>(head_dim));
+                    maximum = std::max(maximum, scores[key]);
                 }
-                output[i * hidden_size + j] = sum / seq_len;
+                double denominator = 0;
+                for (int key = 0; key <= query; ++key) {
+                    scores[key] = std::exp(scores[key] - maximum);
+                    denominator += scores[key];
+                }
+                for (int dim = 0; dim < head_dim; ++dim) {
+                    const int channel = head * head_dim + dim;
+                    double value = 0;
+                    for (int key = 0; key <= query; ++key)
+                        value += scores[key] / denominator * input[key * hidden_size + channel];
+                    output[query * hidden_size + channel] = static_cast<float>(value);
+                }
             }
         }
-        
-        auto end = std::chrono::high_resolution_clock::now();
-        auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
-        
-        std::cout << "✅ Attention computed in " << duration.count() << " ms" << std::endl;
-        
         return output;
-    }
-    
-    void run_tests() {
-        std::cout << "\n🧪 Testing Attention Mechanism" << std::endl;
-        std::cout << "==============================" << std::endl;
-        
-        int test_seq_len = 4;
-        std::vector<float> test_input(test_seq_len * hidden_size, 1.0f);
-        
-        std::cout << "✅ Test 1 - Basic attention computation:" << std::endl;
-        auto output = self_attention(test_input, test_seq_len);
-        
-        std::cout << "   Input shape: [" << test_seq_len << ", " << hidden_size << "]" << std::endl;
-        std::cout << "   Output shape: [" << test_seq_len << ", " << hidden_size << "]" << std::endl;
-        std::cout << "   Sample output: " << output[0] << " " << output[1] << " " << output[2] << std::endl;
-        
-        std::cout << "\n✅ Test 2 - Performance check:" << std::endl;
-        auto perf_start = std::chrono::high_resolution_clock::now();
-        auto perf_output = self_attention(test_input, test_seq_len);
-        auto perf_end = std::chrono::high_resolution_clock::now();
-        auto perf_duration = std::chrono::duration_cast<std::chrono::microseconds>(perf_end - perf_start);
-        
-        std::cout << "   Completed in " << perf_duration.count() << " μs" << std::endl;
-        
-        std::cout << "\n🎉 Attention mechanism tests PASSED!" << std::endl;
     }
 };
 
+void require(bool condition, const char* message) {
+    if (!condition) throw std::runtime_error(message);
+}
+
 int main() {
-    std::cout << "🤖 Step 3: Attention Mechanism Test\n";
-    std::cout << "===================================\n\n";
-    
-    AttentionMechanism attention;
-    attention.run_tests();
-    
-    std::cout << "\n✅ STEP 3 COMPLETE!" << std::endl;
-    std::cout << "📈 Progress: Tokenizer ✅ → Weights ✅ → Attention ✅ → Full Model ❌" << std::endl;
-    std::cout << "📝 Next: Combine everything into full transformer!" << std::endl;
-    
-    return 0;
+    try {
+        AttentionMechanism attention;
+        std::vector<float> input(3 * 64, 1.0f);
+        auto constant = attention.self_attention(input, 3);
+        for (float value : constant) require(std::abs(value - 1.0f) < 1e-6f, "constant values must be preserved");
+        std::fill(input.begin() + 64, input.begin() + 128, 2.0f);
+        std::fill(input.begin() + 128, input.end(), 3.0f);
+        auto output = attention.self_attention(input, 3);
+        require(output[0] == 1.0f, "first token must not see future tokens");
+        double weight = std::exp(-2.0 * std::sqrt(8.0));
+        double reference = (weight + 2.0) / (weight + 1.0);
+        require(std::abs(output[64] - reference) < 1e-6, "scaled softmax must match independent reference");
+        std::fill(input.begin() + 128, input.end(), 1000.0f);
+        auto changed = attention.self_attention(input, 3);
+        for (int i = 0; i < 128; ++i) require(changed[i] == output[i], "causal mask must isolate future values");
+        require(std::isfinite(changed[128]), "stable softmax must stay finite");
+        bool rejected = false;
+        try { attention.self_attention({}, 0); } catch (const std::invalid_argument&) { rejected = true; }
+        require(rejected, "invalid shapes must be rejected");
+        std::cout << "PASS: 8-head causal scaled dot-product attention, stable softmax, reference agreement and shape validation\n";
+        std::cout << "Educational kernel: identity Q/K/V projections, no trained-model generation\n";
+    } catch (const std::exception& error) {
+        std::cerr << error.what() << '\n';
+        return 1;
+    }
 }

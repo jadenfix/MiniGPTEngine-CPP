@@ -31,3 +31,4 @@ create_test_model
 # OS files
 .DS_Store
 Thumbs.db 
+/build/

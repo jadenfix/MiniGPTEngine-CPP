@@ -3,6 +3,9 @@
 #include <cmath>
 #include <chrono>
 #include <random>
+#include <algorithm>
+#include <limits>
+#include <stdexcept>
 
 class AttentionMechanism {
 private:
@@ -18,18 +21,41 @@ public:
         
         auto start = std::chrono::high_resolution_clock::now();
         
-        std::vector<float> output(seq_len * hidden_size);
-        
-        for (int i = 0; i < seq_len; i++) {
-            for (int j = 0; j < hidden_size; j++) {
-                float sum = 0.0f;
-                for (int k = 0; k < seq_len; k++) {
-                    sum += input_embeddings[k * hidden_size + j] * 0.1f;
+        if (seq_len <= 0 || input_embeddings.size() != static_cast<size_t>(seq_len) * hidden_size) {
+            throw std::invalid_argument("Expected positive sequence length and seq_len * 64 embeddings");
+        }
+        for (float value : input_embeddings) {
+            if (!std::isfinite(value)) throw std::invalid_argument("Embeddings must be finite");
+        }
+        // Educational multi-head causal attention with identity Q, K and V projections.
+        // No learned weights or model inference is performed here.
+        std::vector<float> output(input_embeddings.size(), 0.0f);
+        const double scale = 1.0 / std::sqrt(static_cast<double>(head_dim));
+        for (int i = 0; i < seq_len; ++i) {
+            for (int head = 0; head < num_heads; ++head) {
+                std::vector<double> scores(i + 1);
+                double maximum = -std::numeric_limits<double>::infinity();
+                for (int k = 0; k <= i; ++k) {
+                    double dot = 0.0;
+                    for (int j = 0; j < head_dim; ++j) {
+                        dot += static_cast<double>(input_embeddings[i * hidden_size + head * head_dim + j]) *
+                               input_embeddings[k * hidden_size + head * head_dim + j];
+                    }
+                    scores[k] = dot * scale;
+                    maximum = std::max(maximum, scores[k]);
                 }
-                output[i * hidden_size + j] = sum / seq_len;
+                double normalizer = 0.0;
+                for (double& score : scores) { score = std::exp(score - maximum); normalizer += score; }
+                for (int j = 0; j < head_dim; ++j) {
+                    double value = 0.0;
+                    for (int k = 0; k <= i; ++k) {
+                        value += scores[k] / normalizer * input_embeddings[k * hidden_size + head * head_dim + j];
+                    }
+                    output[i * hidden_size + head * head_dim + j] = static_cast<float>(value);
+                }
             }
         }
-        
+
         auto end = std::chrono::high_resolution_clock::now();
         auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(end - start);
         
@@ -72,8 +98,8 @@ int main() {
     attention.run_tests();
     
     std::cout << "\n✅ STEP 3 COMPLETE!" << std::endl;
-    std::cout << "📈 Progress: Tokenizer ✅ → Weights ✅ → Attention ✅ → Full Model ❌" << std::endl;
-    std::cout << "📝 Next: Combine everything into full transformer!" << std::endl;
+    std::cout << "📈 Validated here: educational causal attention with identity Q/K/V only" << std::endl;
+    std::cout << "📝 Learned projections, weight loading, and model generation are separate unfinished work." << std::endl;
     
     return 0;
 }

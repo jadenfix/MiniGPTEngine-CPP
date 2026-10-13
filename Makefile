@@ -1,12 +1,27 @@
 # LightGPT Makefile - Apple Silicon Optimized Transformer Engine
 # Author: Built with passion for high-performance AI inference
 
-CXX = g++
-CXXFLAGS = -O3 -mcpu=apple-m2 -ffast-math -std=c++17
+CXX ?= c++
+CXXFLAGS ?= -O2 -std=c++20 -Wall -Wextra -pedantic
 MODEL_PATH = models/tinyllama-1.1b-chat-v1.0.Q4_K_M.gguf
 
-# Build all components
-all: step1_tokenizer_test step2_safe step3_attention step4_final real_inference quick_test interactive_test
+# Portable, model-free validation is the default. Legacy model tools are prototypes.
+.DEFAULT_GOAL := all
+all: build/attention_demo build/attention_test
+
+build:
+	mkdir -p build
+build/attention_demo: step3_attention.cpp | build
+	$(CXX) $(CXXFLAGS) $< -o $@
+build/attention_test: test/causal_attention_test.cpp step3_attention.cpp | build
+	$(CXX) $(CXXFLAGS) $< -o $@
+portable-demo: build/attention_demo
+	./build/attention_demo
+test: build/attention_test
+	./build/attention_test
+
+# Build legacy model inspection / canned-response prototypes
+model-tools: step1_tokenizer_test step2_safe step3_attention step4_final real_inference quick_test interactive_test
 
 # Step 1: Real Tokenizer
 step1: step1_tokenizer_test
@@ -65,7 +80,7 @@ interactive_test: interactive_test.cpp
 	$(CXX) $(CXXFLAGS) $< -o $@
 
 # Test all components sequentially
-test-all: all
+test-all: model-tools
 	@echo "🧪 Running Complete LightGPT Test Suite"
 	@echo "======================================"
 	@echo ""
@@ -88,20 +103,16 @@ test-all: all
 	@echo "🎉 ALL LIGHTGPT TESTS PASSED!"
 	@echo "✅ Incremental architecture validated"
 	@echo "✅ Apple Silicon optimizations working"
-	@echo "✅ Real answers generated successfully"
+	@echo "✅ Prototype programs completed (not model inference validation)"
 
 # Performance benchmarks
-benchmark: all
-	@echo "📊 LightGPT Performance Benchmarks"
-	@echo "=================================="
-	@echo "Quantization: 25.46× compression (170% of target)"
-	@echo "SIMD Speedup: 2.58× faster (129% of target)" 
-	@echo "Inference: Sub-millisecond response times"
-	@echo "Model Loading: 638MB GGUF in <100ms"
+benchmark: build/attention_demo
+	@echo "Observed educational attention timing on this machine (not tokens/sec model inference):"
+	./build/attention_demo
 
 # Demo with real questions
 demo: step4_final real_inference quick_test
-	@echo "🎪 LightGPT Demo - Real Questions, Real Answers"
+	@echo "🎪 LightGPT Demo - Prototype Demonstration - Canned Responses (not model inference)"
 	@echo "=============================================="
 	@echo ""
 	@echo "📚 Built-in Knowledge Base:"
@@ -175,3 +186,4 @@ help:
 	@echo "  make help       - Show this help"
 
 .PHONY: all step1 step2 step3 step4 test-all benchmark demo clean dev-test check-model deps help quick interactive 
+.PHONY: model-tools portable-demo test

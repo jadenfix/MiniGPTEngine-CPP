@@ -1,3 +1,18 @@
+## Reproducible implementation status
+
+Run `make all test portable-demo` with a C++20 compiler on Linux or macOS. This
+builds fresh binaries under `build/`; no model download is needed. The demo
+performs multi-head **causal scaled dot-product attention** with identity Q/K/V
+projections, stable softmax, and checked inputs. Numerical tests verify the
+attention formula, causal masking, independent heads, and invalid input rejection.
+
+The older `real_inference`, `quick_test`, and related programs are prototypes:
+reading a GGUF header and returning built-in strings does **not** demonstrate
+inference with loaded model weights. Existing historical speed/compression claims
+below are not validated by this test. `make benchmark` reports timings observed
+for the educational attention demo on your machine. Use `make model-tools` to
+build the older model-inspection prototypes explicitly.
+
 # 🚀 LightGPT: High-Performance Transformer Inference Engine
 
 > *A blazing-fast, Apple Silicon-optimized transformer implementation that actually gives real answers, not just loads questions.*

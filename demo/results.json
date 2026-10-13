@@ -1,0 +1,35 @@
+{
+  "source_commit": "51a7a9f0aa6d3e792ec7b41c2e88d1c565877ea9",
+  "kernel_sha256": "38f4b4692297314e6eb01d0e830cf8e496dcbaddb1d2ab922fb6acd42273fba0",
+  "fixture": {
+    "before": [
+      1,
+      2,
+      3
+    ],
+    "after": [
+      1,
+      2,
+      1000
+    ],
+    "channels": 64,
+    "heads": 8,
+    "projections": "identity"
+  },
+  "result": {
+    "before": [
+      1,
+      1.99651873,
+      2.99979353
+    ],
+    "after": [
+      1,
+      1.99651873,
+      1000
+    ],
+    "earlier_channels_unchanged": 128,
+    "finite": true
+  },
+  "presentation": "Rendered explanation of actual fixture outputs, not a screen recording.",
+  "scope": "Educational attention kernel only; no trained-model inference or performance claim."
+}

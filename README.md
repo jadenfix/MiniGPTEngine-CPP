@@ -3,6 +3,16 @@
 An educational C++ transformer experiment with a portable, dependency-free
 reference attention kernel and historical GGUF exploration programs.
 
+## Kernel demo
+
+![Causal attention with an actual three-token fixture](demo/causal-attention.gif)
+
+[Watch the MP4](demo/causal-attention.mp4) · [Reproduce and inspect the evidence](demo/README.md)
+
+This rendered explanation uses outputs from the current portable C++ kernel.
+It shows a synthetic three-token fixture and causal isolation, not model-generated
+text or a screen recording.
+
 ## Verified kernel
 
 ```bash

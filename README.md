@@ -6,7 +6,7 @@ reference attention kernel and historical GGUF exploration programs.
 ## Verified kernel
 
 ```bash
-make test
+make all test portable-demo
 ```
 
 The eight-head kernel computes causal scaled dot-product attention with stable
@@ -23,7 +23,8 @@ The historical tokenizer also includes a manually populated vocabulary. These
 programs remain available for studying the prototype, but should not be used as
 model-quality evidence or presented as real inference in a demo.
 
-`make all` builds the historical programs with portable C++17 flags. The
+`make all` builds fresh model-free reference and regression binaries under `build/`.
+`make model-tools` builds the historical programs with portable flags. The
 model-dependent `make test-all` first checks `MODEL_PATH`; it does not validate
 trained-model generation. No compression ratio, speedup or latency claim is
 established by the reference kernel checks.

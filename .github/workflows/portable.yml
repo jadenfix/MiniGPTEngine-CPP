@@ -1,0 +1,13 @@
+name: Portable attention validation
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  attention:
+    strategy:
+      matrix:
+        os: [ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - run: make all test portable-demo

@@ -179,6 +179,7 @@ public:
 };
 
 int main(int argc, char* argv[]) {
+    std::cout << "PROTOTYPE: responses come from built-in strings, not loaded model weights.\n";
     std::cout << "🤖 LightGPT Real Inference Engine\n";
     std::cout << "==================================\n\n";
     
